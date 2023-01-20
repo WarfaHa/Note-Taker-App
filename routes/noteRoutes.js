@@ -7,13 +7,14 @@ const fs = require("fs");
 // https://www.npmjs.com/package/uniqid
 var uniqid = require("uniqid");
 
-// routing
 module.exports = (app) => {
   
+  // GET Route for a specific note
   app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "../db/db.json"));
   });
 
+  // POST Route for a new note
   app.post("/api/notes", (req, res) => {
     let db = fs.readFileSync("db/db.json");
     db = JSON.parse(db);
@@ -31,12 +32,15 @@ module.exports = (app) => {
     res.json(db);
   });
 
+  // DELETE Route for a specific note
   app.delete('/api/notes/:id', (req, res) => {
     
     let db = JSON.parse(fs.readFileSync('db/db.json'))
     
+     // Make a new array of all notes except the one with the ID provided in the URL
     let result = db.filter(item => item.id !== req.params.id);
     
+    // Save that array to the filesystem
     fs.writeFileSync('db/db.json', JSON.stringify(result));
     res.json(result);
     
