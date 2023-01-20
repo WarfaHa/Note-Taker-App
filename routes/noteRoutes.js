@@ -1,7 +1,9 @@
+// Allows us to work with files and directory paths
 const path = require("path");
+// Allows to to work with files such as read and write
 const fs = require("fs");
 
-//  npm package used to create unique id's based on the current time, process and machine name.
+// This npm package is used to create unique id's based on the current time, process and machine name.
 // https://www.npmjs.com/package/uniqid
 var uniqid = require("uniqid");
 
@@ -28,4 +30,15 @@ module.exports = (app) => {
     fs.writeFileSync("db/db.json", JSON.stringify(db));
     res.json(db);
   });
+
+  app.delete('/api/notes/:id', (req, res) => {
+    
+    let db = JSON.parse(fs.readFileSync('db/db.json'))
+    
+    let result = db.filter(item => item.id !== req.params.id);
+    
+    fs.writeFileSync('db/db.json', JSON.stringify(result));
+    res.json(result);
+    
+  })
 };
