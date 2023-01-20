@@ -37,7 +37,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ## Tests
 I will include a gif on how this project works, but you you can test it via the terminal by answering the questions and generating the README file
 
-![GIF-of-README]
+![GIF-of-note-taker](./public/assets/Gif-of-Note-Taker.gif)
 
 ## Licenses
      To view the MIT license. Click the license button above.
@@ -48,4 +48,4 @@ GitHub: https://github.com/WarfaHa
 Email: Warfa60@gmail.com
 
 ## Credits
-This backend js application was created by Warfa Hassan
+This Express.js backend application was created by Warfa Hassan
