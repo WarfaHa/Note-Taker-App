@@ -35,7 +35,7 @@ WHEN I click on the Write icon in the navigation at the top of the page<br />
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column<br />
 
 ## Tests
-I will include a gif on how this project works, but you you can test it via the terminal by answering the questions and generating the README file
+Below is a GIF using "Heroku open" to deploy application and demonstrating how to add and delete items from the note taker.
 
 ![GIF-of-note-taker](./public/assets/Gif-of-Note-Taker.gif)
 
